@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Gallery | Rahul R - Full Stack Developer</title>
+  <meta name="description" content="Explore category-organized full stack projects, web apps, mobile solutions, and AI tools built by Rahul R.">
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/chatbot.css">
+</head>
+<body>
+
+  <!-- Ambient Background Glowing Orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <!-- Header Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-badge">R</div>
+        <span>RAHUL<span style="color:var(--primary);">.R</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="education.html" class="nav-link">College</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="certificates.html" class="nav-link">Certificates</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Let's Talk</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Navigation Dock -->
+  <div class="mobile-bottom-nav">
+    <a href="index.html" class="bottom-nav-item"><i class="fas fa-house"></i><span>Home</span></a>
+    <a href="education.html" class="bottom-nav-item"><i class="fas fa-graduation-cap"></i><span>College</span></a>
+    <a href="experience.html" class="bottom-nav-item"><i class="fas fa-briefcase"></i><span>Experience</span></a>
+    <a href="projects.html" class="bottom-nav-item active"><i class="fas fa-code"></i><span>Projects</span></a>
+    <a href="contact.html" class="bottom-nav-item"><i class="fas fa-envelope"></i><span>Contact</span></a>
+  </div>
+
+  <!-- Main Section -->
+  <section class="section" style="padding-top: calc(var(--navbar-height) + 3rem);">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge"><i class="fas fa-laptop-code"></i> Project Catalog</div>
+        <h1 class="section-title">Category-Wise <span class="text-gradient">Projects</span></h1>
+        <p class="section-desc">Interactive showcase of web applications, full stack software, mobile interfaces, and AI tools with live links and repository links.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all"><i class="fas fa-layer-group"></i> All Projects</button>
+        <button class="filter-btn" data-filter="fullstack"><i class="fas fa-server"></i> Full Stack</button>
+        <button class="filter-btn" data-filter="web"><i class="fas fa-globe"></i> Web Apps</button>
+        <button class="filter-btn" data-filter="mobile"><i class="fas fa-mobile-screen"></i> Mobile Apps</button>
+        <button class="filter-btn" data-filter="ai"><i class="fas fa-robot"></i> AI / ML</button>
+      </div>
+
+      <!-- Dynamic Projects Cards Grid -->
+      <div class="grid-3" id="projectsGrid">
+        <!-- Javascript renders project cards dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-badge">R</div>
+          <span>RAHUL<span style="color:var(--primary);">.R</span></span>
+        </a>
+        <p>Full Stack Developer & CSE Student at VINS Christian College of Engineering, Nagercoil.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="education.html">College</a></li>
+          <li><a href="experience.html">Experience</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Portfolio</h4>
+        <ul class="footer-links">
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certificates.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">GitHub Code Repo</h4>
+        <a href="https://github.com/ragulravi2405-coder" target="_blank" style="color:var(--primary); font-size:0.85rem;"><i class="fab fa-github"></i> github.com/ragulravi2405-coder</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      &copy; 2026 Rahul R. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+</body>
+</html>
