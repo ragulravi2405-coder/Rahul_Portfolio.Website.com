@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Rahul R Portfolio - Core Interactive JavaScript
+   Rahul R Portfolio - Core Interactive JavaScript & Scroll Animations
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,15 +70,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Navbar Background Scroll Shadow
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
-      navbar.style.background = 'rgba(11, 15, 25, 0.95)';
-    } else {
-      navbar.style.boxShadow = 'none';
-      navbar.style.background = 'var(--bg-glass)';
+  // Esc key to close modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('active')) {
+      closeImageModal();
     }
   });
+
+  // Navbar Background Scroll Shadow & Elevation
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  // Modern IntersectionObserver for Gentle Viewport Fade-Up (One-time, lightweight)
+  if ('IntersectionObserver' in window) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.1
+    };
+
+    const animateOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animElements = document.querySelectorAll(
+      '.glass-card, .offer-card, .project-card, .section-header, .stat-item, .hero-content, .hero-avatar-wrapper'
+    );
+
+    animElements.forEach((el, index) => {
+      el.classList.add('fade-in-up');
+      // Subtle stagger delay for grid items
+      if (el.classList.contains('glass-card') || el.classList.contains('offer-card') || el.classList.contains('stat-item')) {
+        el.style.transitionDelay = `${(index % 3) * 0.08}s`;
+      }
+      animateOnScroll.observe(el);
+    });
+  }
 });

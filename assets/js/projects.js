@@ -90,9 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ? projectsData 
       : projectsData.filter(p => p.category === filterCategory);
 
-    filtered.forEach(project => {
+    filtered.forEach((project, idx) => {
       const card = document.createElement('div');
-      card.className = 'project-card';
+      card.className = 'project-card fade-in-up visible';
+      card.style.transitionDelay = `${(idx % 3) * 0.08}s`;
       card.innerHTML = `
         <div class="project-img">
           <img src="${project.image}" alt="${project.title}" loading="lazy" />
